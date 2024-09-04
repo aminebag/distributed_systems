@@ -1,0 +1,30 @@
+- install version 22 of OpenJDK
+- install latest version of Intellij Community Edition
+- create a new private github repository and name it last-second
+- use spring initializer to create a new Spring Boot project: https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.3&packaging=jar&jvmVersion=22&groupId=com.bagdouri&artifactId=lastsecond&name=lastsecond&description=Demo%20project%20for%20Spring%20Boot&packageName=com.bagdouri.lastsecond&dependencies=lombok,configuration-processor,devtools,web
+- extract the spring project into your local github repository
+- build the project using maven
+
+- create a model class representing a flight booking: 
+id, customer first name, customer last name, customer ID number, departure airport, departure date/time, arrival airport, arrival date/time, price
+- create a service FlightBookingService that manages flight bookings:
+--> create flight booking (save in a list or map for now)
+--> get flight booking by ID
+--> get all flight bookings
+--> update flight booking
+--> delete flight booking
+
+- create a controller FlightBookingController that provides endpoints to manage flight bookings.
+
+- add the springdoc dependency to your maven POM file to generate an OpenAPI (Swagger) documentation
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+		
+- run the application on your local environment:
+--> make sure that the application starts successfully
+--> make sure that the swagger is accessible on https://localhost:8080/swagger-ui/index.html
+--> make sure that all of your endpoints work as expected
+- commit and push your code to github

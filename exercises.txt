@@ -17,14 +17,18 @@ id, customer first name, customer last name, customer ID number, departure airpo
 - create a controller FlightBookingController that provides endpoints to manage flight bookings.
 
 - add the springdoc dependency to your maven POM file to generate an OpenAPI (Swagger) documentation
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.6.0</version>
-        </dependency>
 		
 - run the application on your local environment:
 --> make sure that the application starts successfully
 --> make sure that the swagger is accessible on https://localhost:8080/swagger-ui/index.html
 --> make sure that all of your endpoints work as expected
-- commit and push your code to github
+--> invoke your endpoints using Postman and make sure that they're all working as expected
+
+- create a FlightBookingNotFoundException class and throw this exception when the user attempts to update a non-existing booking
+- try to update a non-exisiting booking and make sure that a 500 HTTP error is returned
+- create a ControllerAdvice that returns a proper HTTP response whenever FlightBookingNotFound is thrown
+- try to update a non-exisiting booking and make sure that a proper HTTP response is returned
+
+- secure your application with TLS (HTTPS) with a self-signed certificate
+- make sure that the server doesn't accept unsecured HTTP requests
+- make sure that the server accepts HTTPS requests, you should notice that the browser doesn't trust the connection to your application's server since it doesn't trust your self signed certificate

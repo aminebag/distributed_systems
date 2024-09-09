@@ -20,7 +20,7 @@ id, customer first name, customer last name, customer ID number, departure airpo
 		
 - run the application on your local environment:
 --> make sure that the application starts successfully
---> make sure that the swagger is accessible on https://localhost:8080/swagger-ui/index.html
+--> make sure that the swagger is accessible on http://localhost:8080/swagger-ui/index.html
 --> make sure that all of your endpoints work as expected
 --> invoke your endpoints using Postman and make sure that they're all working as expected
 

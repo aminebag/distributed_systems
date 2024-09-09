@@ -5,7 +5,7 @@
 - extract the spring project into your local github repository
 - build the project using maven
 
-- create a model class representing a flight booking: 
+- create a DTO class representing a flight booking: 
 id, customer first name, customer last name, customer ID number, departure airport, departure date/time, arrival airport, arrival date/time, price
 - create a service FlightBookingService that manages flight bookings:
 --> create flight booking (save in a list or map for now)

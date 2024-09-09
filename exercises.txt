@@ -3,7 +3,7 @@
 - create a new private github repository and name it last-second
 - use spring initializer to create a new Spring Boot project: https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.3&packaging=jar&jvmVersion=22&groupId=com.bagdouri&artifactId=lastsecond&name=lastsecond&description=Demo%20project%20for%20Spring%20Boot&packageName=com.bagdouri.lastsecond&dependencies=lombok,configuration-processor,devtools,web
 - extract the spring project into your local github repository
-- build the project using maven
+- build the project using maven: mvn clean install
 
 - create a DTO class representing a flight booking: 
 id, customer first name, customer last name, customer ID number, departure airport, departure date/time, arrival airport, arrival date/time, price

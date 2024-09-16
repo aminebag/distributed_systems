@@ -32,3 +32,29 @@ id, customer first name, customer last name, customer ID number, departure airpo
 - secure your application with TLS (HTTPS) with a self-signed certificate
 - make sure that the server doesn't accept unsecured HTTP requests
 - make sure that the server accepts HTTPS requests, you should notice that the browser doesn't trust the connection to your application's server since it doesn't trust your self signed certificate
+
+- install and start PostgreSQL server on your local machine
+- add spring-boot-starter-data-jpa dependency to your Maven POM file to be able to use Spring Data
+- add postgresql dependency to your Maven POM file to be able to connect to your PostgreSQL server
+- rename your App conf file application.properties to application.yml (YAML is more readable than PROPERTIES)
+- create a database on your PostgreSQL (using pgAdmin)
+- add DB connection configuration to your application.yml file
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lastminute
+    username: postgres
+    password: yourPassword
+- add the liquibase dependency to your Maven POM file to be able to automatically create the DB at startup (if not already created)
+- enable liquibase in the configuration file
+spring:
+  liquibase:
+    enabled: true
+- create a Liquibase script in the resources folder that creates a FLIGHT_BOOKING table with the same structure as the FlightBooking entity
+- add the following property to make sure that the DB schema matches the entity classes at the startup of the application
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+- create a FlightBooking entity that represents the FLIGHT_BOOKING table
+- create a FlightBookingRepository that will be used to interact with the DB
+- use the FlightBookingRepository inside the FlightBookingService to read/write flight bookings to the DB instead of memory
